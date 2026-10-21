@@ -1,6 +1,6 @@
 # algorithms-java
 
-[![CI](https://github.com/jaderss/algorithms-java/actions/workflows/ci.yml/badge.svg)](https://github.com/jaderss/algorithms-java/actions/workflows/ci.yml)
+[![CI](https://github.com/jaderss/algorithms-java/actions/workflows/ci.yml/badge.svg)](https://github.com/jaderss/algorithms-java/actions/workflows/ci.yml) [![Quality gate](https://sonarcloud.io/api/project_badges/measure?project=jaderss_algorithms-java&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jaderss_algorithms-java) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=jaderss_algorithms-java&metric=coverage)](https://sonarcloud.io/summary/new_code?id=jaderss_algorithms-java)
 
 46 classic interview problems in Java 25, grouped by the pattern that solves them. Each problem is one class with one package per pattern. Each class has example-based tests taken from the problem statement plus edge cases, and each pattern has jqwik properties that check the solutions against brute-force oracles.
 
