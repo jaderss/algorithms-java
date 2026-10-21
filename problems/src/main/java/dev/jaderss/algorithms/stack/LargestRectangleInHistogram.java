@@ -10,15 +10,21 @@ public final class LargestRectangleInHistogram {
     public static long area(int[] heights) {
         Deque<Integer> rising = new ArrayDeque<>();
         long best = 0;
-        for (int index = 0; index <= heights.length; index++) {
-            int height = index == heights.length ? 0 : heights[index];
-            while (!rising.isEmpty() && heights[rising.peek()] >= height) {
-                int tallest = rising.pop();
-                int leftBound = rising.isEmpty() ? -1 : rising.peek();
-                best = Math.max(best, (long) heights[tallest] * (index - leftBound - 1));
+        for (int index = 0; index < heights.length; index++) {
+            while (!rising.isEmpty() && heights[rising.peek()] >= heights[index]) {
+                best = Math.max(best, widestAt(heights, rising, index));
             }
             rising.push(index);
         }
+        while (!rising.isEmpty()) {
+            best = Math.max(best, widestAt(heights, rising, heights.length));
+        }
         return best;
+    }
+
+    private static long widestAt(int[] heights, Deque<Integer> rising, int rightBound) {
+        int tallest = rising.pop();
+        int leftBound = rising.isEmpty() ? -1 : rising.peek();
+        return (long) heights[tallest] * (rightBound - leftBound - 1);
     }
 }
