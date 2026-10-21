@@ -1,6 +1,7 @@
 package dev.jaderss.algorithms.hashing;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public final class TopKFrequent {
     public static List<Integer> byBuckets(int[] numbers, int k) {
         Map<Integer, Integer> counts = counts(numbers, k);
         List<List<Integer>> buckets = Stream.<List<Integer>>generate(ArrayList::new)
-                .limit(numbers.length + 1L)
+                .limit(Collections.max(counts.values()) + 1L)
                 .toList();
         counts.forEach((value, count) -> buckets.get(count).add(value));
         return buckets.reversed().stream().flatMap(List::stream).limit(k).toList();
