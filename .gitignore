@@ -1,0 +1,6 @@
+target/
+.jqwik-database
+.DS_Store
+.idea
+*.iml
+.vscode/
