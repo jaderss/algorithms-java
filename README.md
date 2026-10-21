@@ -108,7 +108,7 @@ Kth Largest Element:
 | 1,000,000 | 10 | 11,047 | 5,257 | 43,765 |
 | 1,000,000 | n / 2 | 84,426 | 8,978 | 44,284 |
 
-Quickselect wins everywhere. A heap of size k is a fine choice when k is small or the values arrive as a stream. At k = n / 2 the heap does worse than sorting, because it boxes half a million integers.
+Quickselect wins everywhere. A heap of size k is a fine choice when k is small or the values arrive as a stream. At k = n / 2 the heap does worse than sorting, since it keeps half a million boxed integers ordered.
 
 ## Layout
 
